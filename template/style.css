@@ -7,8 +7,15 @@ html {
     font-size: 16px;
   }
 }
-.wVh40{height: 40vh;}
-.wVh60{height: 60vh;}
+
+.wVh40 {
+  height: 40vh;
+}
+
+.wVh60 {
+  height: 60vh;
+}
+
 .container {
   max-width: 960px;
 }
@@ -21,18 +28,37 @@ html {
   min-width: 220px;
 }
 
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   text-align: left;
-  background-color: #f4f4f4;
-  color: #1b1b1c;
+  background-color: #f6f6f6;
+  color: #3a3a3a;
   font-weight: 500;
 }
+.header {
+  position: fixed;
+  z-index: 5;width: 100vw;    padding: 9px 0 0 0;
 
+height:60px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.header.inverse {
+  background: rgba(255,255,255, .8);
+  -webkit-box-shadow: 0 1px 15px rgba(0,0,0, .15);
+  -moz-box-shadow: 0 1px 15px rgba(0,0,0, .15);
+  box-shadow: 0 1px 15px rgba(0,0,0, .15);
+}
+.logoPage {
+  font-size: 24px;
+  padding: 3px 0px 0 0px;
+  letter-spacing: 5px;
+}
 .cover-container {
   min-height: 80vh;
 }
@@ -46,7 +72,7 @@ a:hover {
   font-size: 1.25rem;
   font-weight: 400;
 }
-
+.homeBox1{ min-height: 75vh; padding:25vh ; width: 100%}
 .meta {
   font-size: .6rem;
   line-height: 1.4;
@@ -61,7 +87,32 @@ a:hover {
   font-size: 0.8rem;
   padding: 0.5rem 1.5rem;
 }
-
+.parentPlainGrid  {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  display: inline-block;
+  cursor: pointer;
+}
+.ChildPlainGrid {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.parentPlainGrid:hover .ChildPlainGrid, .parentPlainGrid:focus .ChildPlainGrid {
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
 .cardGridPlain {
   border-radius: 0;
   background-color: transparent;
@@ -87,7 +138,6 @@ a:hover {
 .cardGridPlain .dash {
   transition: all .2s ease-in-out;
   width: 18px;
-  float: left;
   border-top: 2px solid #000000;
   margin: 5px;
 }
@@ -95,15 +145,27 @@ a:hover {
 .cardGridPlain:hover .dash {
   width: 50px;
 }
-.cardGridPlain p{ font-size: 0.8rem; font-weight: 400;}
+
+.cardGridPlain p {
+  font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
 .cardTextHoverShow {
   display: none;
   transition: all .2s ease-in-out;
 }
 
-
 .cardGridPlain:hover .cardTextHoverShow {
   display: block
+}
+
+.footer {
+  background-color: #1b1b1c;
+  color: #fff;
+  padding: 5vw 0;
+  font-size: 0.8rem;
 }
 
 .footer .h5,
@@ -112,9 +174,11 @@ h5 {
   padding-bottom: 1rem;
 }
 
-.footer a {
-  font-size: 0.8rem;
-  font-weight: 600;
+.footer-link,
+footer a {
+  color: #848484;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .cardImgOverLay {
@@ -140,12 +204,25 @@ h5 {
   transform: scale(1.1);
 }
 
+.cardGridDark .cardBody {
+  color: #ffffff;
+ 
+  padding: 3vw;
+  transition: background-color 0.5s ease;
+  background-color: #00000087;
+}
+.cardGridDark:hover .cardBody { background-color: #000000ab;}
 .cardMeta {}
 
-@media  (max-width: 728px) {
+@media (max-width: 728px) {
   .cardTextHoverShow {
     display: block;
   }
- .wVh60{height: auto; min-height: 250px;}
- .cardGridPlain { padding-top: 100px;}
+  .wVh60 {
+    height: auto;
+    min-height: 250px;
+  }
+  .cardGridPlain {
+    padding-top: 100px;
+  }
 }
